@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Rede Social</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Tela de Login/Cadastro -->
+    <div id="auth-container">
+      <div id="auth-box">
+        <h1>📱 Minha Rede</h1>
+        <div id="auth-tabs">
+          <button class="tab-btn active" data-tab="login">Entrar</button>
+          <button class="tab-btn" data-tab="register">Cadastrar</button>
+        </div>
+
+        <form id="login-form" class="auth-form active">
+          <input type="email" id="login-email" placeholder="seu@email.com" required>
+          <input type="password" id="login-password" placeholder="Senha" required>
+          <button type="submit">Entrar</button>
+          <div id="login-message" class="message"></div>
+        </form>
+
+        <form id="register-form" class="auth-form">
+          <input type="email" id="register-email" placeholder="seu@email.com" required>
+          <input type="password" id="register-password" placeholder="Senha (mínimo 4 caracteres)" required minlength="4">
+          <button type="submit">Cadastrar</button>
+          <div id="register-message" class="message"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Timeline (aparece após login) -->
+    <div id="timeline-container" style="display: none;">
+      <header>
+        <h2>📝 Timeline</h2>
+        <div>
+          <span id="user-email"></span>
+          <button id="logout-btn">Sair</button>
+        </div>
+      </header>
+
+      <!-- Área de nova postagem -->
+      <div id="new-post">
+        <textarea id="post-content" placeholder="O que você está pensando? (use emojis 😊)"></textarea>
+        <button id="post-btn">Publicar</button>
+        <div id="post-message" class="message"></div>
+      </div>
+
+      <!-- Lista de postagens -->
+      <div id="posts-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
